@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using NZWalks.API.Modles.Domain;
+using NZWalks.API.Models.Domain;
 using System.Collections.Generic;
 
 namespace NZWalks.API

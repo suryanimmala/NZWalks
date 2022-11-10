@@ -25,7 +25,7 @@ namespace NZWalks.API.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("NZWalks.API.Modles.Domain.Region", b =>
+            modelBuilder.Entity("NZWalks.API.Models.Domain.Region", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -56,7 +56,7 @@ namespace NZWalks.API.Migrations
                     b.ToTable("Regions");
                 });
 
-            modelBuilder.Entity("NZWalks.API.Modles.Domain.Walk", b =>
+            modelBuilder.Entity("NZWalks.API.Models.Domain.Walk", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -84,7 +84,7 @@ namespace NZWalks.API.Migrations
                     b.ToTable("Walks");
                 });
 
-            modelBuilder.Entity("NZWalks.API.Modles.Domain.WalkDifficulty", b =>
+            modelBuilder.Entity("NZWalks.API.Models.Domain.WalkDifficulty", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -99,15 +99,15 @@ namespace NZWalks.API.Migrations
                     b.ToTable("WalkDifficulty");
                 });
 
-            modelBuilder.Entity("NZWalks.API.Modles.Domain.Walk", b =>
+            modelBuilder.Entity("NZWalks.API.Models.Domain.Walk", b =>
                 {
-                    b.HasOne("NZWalks.API.Modles.Domain.Region", "Region")
+                    b.HasOne("NZWalks.API.Models.Domain.Region", "Region")
                         .WithMany("Walks")
                         .HasForeignKey("RegionId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("NZWalks.API.Modles.Domain.WalkDifficulty", "WalkDifficulty")
+                    b.HasOne("NZWalks.API.Models.Domain.WalkDifficulty", "WalkDifficulty")
                         .WithMany()
                         .HasForeignKey("WalkDifficultyId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -118,7 +118,7 @@ namespace NZWalks.API.Migrations
                     b.Navigation("WalkDifficulty");
                 });
 
-            modelBuilder.Entity("NZWalks.API.Modles.Domain.Region", b =>
+            modelBuilder.Entity("NZWalks.API.Models.Domain.Region", b =>
                 {
                     b.Navigation("Walks");
                 });
